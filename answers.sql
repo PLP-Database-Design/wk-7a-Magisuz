@@ -40,14 +40,14 @@ VALUES(101,"John Doe", "Laptop"),
 
 -- Create the Table
 CREATE TABLE OrderDetails(
-OrderId INT,
+OrderId INT PRIMARY KEY,
 CustomerName VARCHAR (100),
 Product VARCHAR (100),
 Quantity INT
 );
 
 -- Insert the Data
-INSERT INTO OrderDetails 
+INSERT INTO OrderDetails(OrderId, CustomerName,Product, Quantity)
 VALUES (101, "John Doe", "Laptop", 2),
 (101, "John Doe", "Mouse", 1),
 (102, "Jane Smith", "Tablet", 3),
@@ -62,10 +62,11 @@ CustomerId INT PRIMARY KEY,
 CustomerName VARCHAR (100)
 );
 
-CREATE TABLE OrderItems(
+CREATE TABLE Product(
 OrderId INT,
 Product VARCHAR (100),
 Quantity INT,
+PRIMARY KEY (OrderId,Product),
 FOREIGN KEY (OrderId) REFERENCES CustomerDetails(OrderId)
 );
 
@@ -75,7 +76,7 @@ VALUES (101, "John Doe"),
 (102, "Jane Smith"),
 (103, "Emily Clark");
 
-INSERT INTO OrderItems(OrderId, Product, Quantity)
+INSERT INTO Product(OrderId, Product, Quantity)
 VALUES (101, "Laptop", 2),
 (101, "Mouse", 1),
 (102, "Tablet", 3),
