@@ -10,7 +10,7 @@ Products VARCHAR (100)
 );
 
 -- Insert the Data
-INSERT INTO ProductDetail 
+INSERT INTO ProductDetail(OrderID, CustomerName, Products)
 VALUES (101, "John Doe", "Laptop, Mouse"),
 (102, "Jane Smith", "Tablet, Keyboard, Mouse"),
 (103, "Emily Clark", "Phone");
