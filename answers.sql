@@ -1,23 +1,9 @@
 -- 1. Write an SQL query** to transform this table into **1NF**, ensuring that each row represents a single product for an order
 -- CREATE DATABASE NormalForm;
 -- USE NormalForm;
-
--- Create the Table
-CREATE TABLE ProductDetail(
-OrderId INT,
-CustomerName VARCHAR (100),
-Products VARCHAR (100)
-);
-
--- Insert the Data
-INSERT INTO ProductDetail(OrderID, CustomerName, Products)
-VALUES (101, "John Doe", "Laptop, Mouse"),
-(102, "Jane Smith", "Tablet, Keyboard, Mouse"),
-(103, "Emily Clark", "Phone");
-
 -- Transform the Table into 1NF
 -- Create the Table
-CREATE TABLE ProductDetail_1NF(
+CREATE TABLE ProductDetail(
 OrderId INT,
 CustomerName VARCHAR (100),
 Products VARCHAR (100)
